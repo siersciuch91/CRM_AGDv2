@@ -1,0 +1,28 @@
+﻿@using CRM_AGD
+@{
+  var checkModule = Startup.CheckModule;
+}
+
+@switch (checkModule)
+{
+  case (CRM_AGD.Enum.Module.Address):
+    <ul class="nav navbar-nav">
+      <li><a asp-area="Address" asp-controller="Cities" asp-action="Index">Cites</a></li>
+      <li><a asp-area="Address" asp-controller="Streets" asp-action="Index">Streets</a></li>
+      <li>@Html.ActionLink("Street Prexix", "Index", "StreetPrefixes", new { area = "Address" }, null)</li>
+    </ul>
+    break;
+  case (CRM_AGD.Enum.Module.Equipment):
+    <ul class="nav navbar-nav">
+      <li><a asp-area="Equipment" asp-controller="Manufacturers" asp-action="Index">Manufacturer</a></li>
+    </ul>
+    break;
+  case (CRM_AGD.Enum.Module.Client):
+    <ul class="nav navbar-nav">
+      <li><a asp-area="Client" asp-controller="Clients" asp-action="Index">Client</a></li>
+    </ul>
+    break;
+  default:
+    break;
+}
+

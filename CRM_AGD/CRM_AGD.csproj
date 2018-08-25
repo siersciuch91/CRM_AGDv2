@@ -189,14 +189,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\AddressContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Address\AddressAreaRegistration.cs" />
+    <Compile Include="Areas\Address\Controllers\StreetPrefixesController.cs" />
+    <Compile Include="Areas\Address\Models\StreetPrefix.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Enum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,6 +225,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Address\Views\web.config" />
+    <Content Include="Areas\Address\Views\StreetPrefixes\Create.cshtml" />
+    <Content Include="Areas\Address\Views\StreetPrefixes\Delete.cshtml" />
+    <Content Include="Areas\Address\Views\StreetPrefixes\Details.cshtml" />
+    <Content Include="Areas\Address\Views\StreetPrefixes\Edit.cshtml" />
+    <Content Include="Areas\Address\Views\StreetPrefixes\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -265,9 +276,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_ModuleNavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Address\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
